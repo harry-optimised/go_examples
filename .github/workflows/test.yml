@@ -12,7 +12,5 @@ jobs:
         with:
           go-version: 1.19
       - uses: actions/checkout@v3
-      - name: Build
-        run: cd src && go build -v ./...
       - name: Test
         run: cd src && go test -v ./...
