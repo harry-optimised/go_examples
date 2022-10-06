@@ -1,0 +1,16 @@
+name: Test
+on:
+  push:
+permissions:
+  contents: read
+jobs:
+  golangci:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-go@v3
+        with:
+          go-version: 1.19
+      - uses: actions/checkout@v3
+      - name: Test
+        run: cd src && go test -v ./...
